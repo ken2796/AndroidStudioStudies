@@ -12,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.kencyandroidstudies.cyan.ImageCyanViewPreview
 import com.example.kencyandroidstudies.ken.ImageKenViewPreview
 import com.example.kencyandroidstudies.ui.theme.KenCyAndroidStudiesTheme
 
@@ -29,11 +30,17 @@ class MainActivity : ComponentActivity() {
 fun MainStudyProject() {
     Column {
         MainKenView()
+        MainCyanView()
     }
 }
 @Composable
 fun MainKenView() {
     ImageKenViewPreview()
+}
+
+@Composable
+fun MainCyanView(){
+    ImageCyanViewPreview()
 }
 
 @Preview(showBackground = true)
