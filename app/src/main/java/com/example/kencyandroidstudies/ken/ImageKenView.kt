@@ -1,5 +1,6 @@
 package com.example.kencyandroidstudies.ken
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -15,12 +16,36 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.kencyandroidstudies.R
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.runtime.*
+import androidx.compose.foundation.layout.size
+import androidx.compose.animation.animateContentSize
 
 @Composable
-fun ImageKenView(modifier: Modifier = Modifier) {
-  Text(text = "Kay Kenneth ito")
+fun ImageKenView() {
+    var isImageVisible by remember { mutableStateOf(false) }
+
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally) {
+
+        if (isImageVisible) {
+            Image(
+                painter = painterResource(id = R.drawable.ken_lmage),
+                contentDescription = "Ken Image"
+            )
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Button(onClick = { isImageVisible = !isImageVisible }) {
+            Text(text = if (isImageVisible) "Hide Image" else "Show Image")
+        }
+    }
 }
 
 @Preview(showBackground = true)
