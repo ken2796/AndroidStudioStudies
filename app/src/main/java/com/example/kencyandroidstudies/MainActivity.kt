@@ -46,6 +46,7 @@ fun MainKenView() {
 @Composable
 fun MainCyanView(){
     ImageCyanViewPreview()
+
 }
 
 @Preview(showBackground = true)
