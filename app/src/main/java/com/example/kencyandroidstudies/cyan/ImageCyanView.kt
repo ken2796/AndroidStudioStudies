@@ -30,10 +30,11 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun ImageCyanView(imageAlpha: Float){
     val cyanLogo = R.drawable.cyan_logo
-
-    Image(painter = painterResource(id = cyanLogo),
+    Image(
+        painter = painterResource(id = cyanLogo),
         contentDescription = "Cyan's Logo",
-        alpha = imageAlpha)
+        alpha = imageAlpha
+    )
 }
 
 @Composable
@@ -44,21 +45,23 @@ fun ShowLogoButton(onClick: () -> Unit, textButton: String) {
     }
 }
 
+@Composable
+fun ImageCyanViewContainer() {
+    var showHideImage by remember { mutableStateOf(false) }
+
+    val showHideText = if (showHideImage) "Hide" else "Show"
+    val imageOpacity = if (showHideImage) 1f else 0f
+
+    ShowLogoButton(
+        textButton = "$showHideText Cyan's Logo",
+        onClick = { showHideImage = !showHideImage }
+    )
+
+    ImageCyanView(imageAlpha = imageOpacity)
+}
+
 @Preview(showBackground = true)
 @Composable
 fun ImageCyanViewPreview() {
-    var imageOpacity: Float by remember { mutableFloatStateOf(0f) }
-    var showHideText: String = ""
-    var showHideImage: Boolean by remember {mutableStateOf(false)}
-
-    if (showHideImage){
-        showHideText = "Hide"
-        imageOpacity = 1f
-    } else {
-        showHideText = "Show"
-        imageOpacity = 0f
-    }
-
-    ShowLogoButton(textButton = "$showHideText Cyan's Logo", onClick = { showHideImage = !showHideImage })
-    ImageCyanView(imageAlpha = imageOpacity)
+    ImageCyanViewContainer()
 }
