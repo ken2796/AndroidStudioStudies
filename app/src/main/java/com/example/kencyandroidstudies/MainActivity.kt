@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.kencyandroidstudies.cyan.ImageCyanViewPreview
+import com.example.kencyandroidstudies.cyan.BmiCyanViewPreview
 import com.example.kencyandroidstudies.ken.ImageKenViewPreview
 import com.example.kencyandroidstudies.ui.theme.KenCyAndroidStudiesTheme
 
@@ -49,7 +50,7 @@ fun MainKenView() {
 
 @Composable
 fun MainCyanView(){
-    ImageCyanViewPreview()
+    BmiCyanViewPreview()
 
 }
 
