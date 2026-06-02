@@ -41,7 +41,7 @@ fun ImageKenView() {
         Spacer(modifier = Modifier.height(16.dp))
 
         Button(onClick = { isImageVisible = !isImageVisible }) {
-            Text(text = if (isImageVisible) "Hide Image" else "Show Image")
+            Text(text = if (isImageVisible) "Hide BMI Calculator" else "Show BMI Calculator")
         }
     }
 }
