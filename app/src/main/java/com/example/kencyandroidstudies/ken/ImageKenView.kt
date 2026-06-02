@@ -25,6 +25,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.*
 import androidx.compose.foundation.layout.size
 import androidx.compose.animation.animateContentSize
+import com.example.kencyandroidstudies.kenBMI.KenBMIView
 
 @Composable
 fun ImageKenView() {
@@ -34,10 +35,7 @@ fun ImageKenView() {
         horizontalAlignment = Alignment.CenterHorizontally) {
 
         if (isImageVisible) {
-            Image(
-                painter = painterResource(id = R.drawable.ken_lmage),
-                contentDescription = "Ken Image"
-            )
+            KenBMIView()
         }
 
         Spacer(modifier = Modifier.height(16.dp))
